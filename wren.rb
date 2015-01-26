@@ -1,6 +1,6 @@
 class Wren < Formula
   homepage "http://munificent.github.io/wren/"
-  head "https://github.com/munificent/wren.git" 
+  head "https://github.com/munificent/wren.git"
 
   depends_on "pkg-config" => :build
 
@@ -11,7 +11,7 @@ class Wren < Formula
   end
 
   test do
-    libexec.cd do
+    cd libexec do
       system "make", "test"
     end
   end
