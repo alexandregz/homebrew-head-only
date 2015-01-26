@@ -7,7 +7,9 @@ class Wren < Formula
   def install
     system "make"
     bin.install "wren"
-    libexec.install Dir["Makefile", "include", "script", "src", "test"]
+    inreplace "Makefile", "include/wren.h", "../include/wren.h"
+    libexec.install Dir["Makefile", "script", "src", "test"]
+    include.install Dir["include/*"]
   end
 
   test do
