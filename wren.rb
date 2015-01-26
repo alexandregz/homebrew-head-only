@@ -9,7 +9,7 @@ class Wren < Formula
     bin.install "wren"
     inreplace "Makefile", "include/wren.h", "../include/wren.h"
     libexec.install Dir["Makefile", "script", "src", "test"]
-    include.install Dir["include/*"]
+    prefix.install Dir["include"]
   end
 
   test do
